@@ -1,4 +1,5 @@
 import React from "react";
+import CartWidget from "./CartWidget";
 
 //Definiendo un componente como una función
 
@@ -16,10 +17,11 @@ const Header = ({nombre, apellido}) =>{
                     
                     <div className="collapse navbar-collapse text-center text-md-start" id="navbarNav">
                         <ul className="navbar-nav me-auto me-lg-0">
-                            <li className="nav-item"><a className="nav-link" href="./pages/bio.html">Bio</a></li>
-                            <li className="nav-item"><a className="nav-link" href="./pages/fotos.html">Fotos</a></li>
-                            <li className="nav-item"><a className="nav-link" href="./pages/discografia.html">Discografia</a></li>
-                            <li className="nav-item"><a className="nav-link" href="./pages/contacto.html">Contacto</a></li>
+                            <li className="nav-item"><a className="nav-link" href="./index.html">Guitarras</a></li>
+                            <li className="nav-item"><a className="nav-link" href="./index.html">Bajos</a></li>
+                            <li className="nav-item"><a className="nav-link" href="./index.html">Pianos</a></li>
+                            <li className="nav-item"><a className="nav-link" href="./index.html">Baterías</a></li>
+                            <li className="nav-item"><a className="nav-link" href="./carrito.html"><CartWidget /></a></li>
                         </ul>
                     </div>
                 </div>
