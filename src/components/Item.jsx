@@ -1,5 +1,4 @@
 import React from "react";
-import ItemCount from "./ItemCount";
 
 const Item = (props) => {
 
@@ -9,9 +8,8 @@ const Item = (props) => {
             <div className="card-body">
                 <h4>{props.item.marca} - '{props.item.nombre}'</h4>
                 <h5>Precio: ${props.item.precio}</h5>
-                <p>Stock: {props.item.stock}</p>
                 <div className="card-footer text-muted">
-                    <ItemCount stock={props.item.stock} />
+                    <button className="btn btn-primary">Detalles</button>
                 </div>
             </div>
         </div>   
