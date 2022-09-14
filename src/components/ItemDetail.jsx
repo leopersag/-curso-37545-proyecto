@@ -4,7 +4,7 @@ import ItemCount from "./ItemCount";
 const ItemDetail = (props) => {
     return(
         <div className="card text-bg-light col-md-11 p-3">
-            <div className="row g-0">
+            <div className="row g-0 align-items-center">
                 <div className="col-md-7">
                     <img className="img-fluid m-2" src={props.item.img} alt={props.item.nombre} />
                 </div>

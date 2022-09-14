@@ -3,11 +3,17 @@ import { useEffect } from "react";
 import { useState } from "react";
 import ItemList from "./ItemList";
 import {productos} from "./productos";
+import {useParams} from "react-router-dom";
 
 const ItemListContainer = (props) => {
     const [items, SetItems] = useState([]);
-
+    const {id} = useParams();
+    const [categoria, SetCategoria] = useState([])
+    
     useEffect(()=>{
+        
+        let categoria = "";
+        id === "guitarras"? categoria ="Guitarras": id === "bajos"? categoria = "Bajos":categoria="Todos";
 
         const getProductos = new Promise ((resolve) => {
             setTimeout(()=>{
@@ -16,15 +22,21 @@ const ItemListContainer = (props) => {
         });
 
         getProductos.then((answer) => {
-            SetItems(answer);
+            if (categoria==="Todos"){
+                SetItems(answer);
+            } else {
+                const categoriaId = answer.filter(cat => cat.categoria ===categoria);  
+                SetItems(categoriaId);
+            }
+            SetCategoria(categoria);
         });
 
-    },[]);    
+    },[id]);    
 
     return(
         <div>
             <ul className="list-group App-header">
-                <strong>{props.categoria}</strong>
+                <strong>{categoria}</strong>
             </ul>
 
             <div className="d-flex flex-wrap justify-content-center">
