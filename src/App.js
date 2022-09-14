@@ -11,7 +11,7 @@ function App() {
   return (
         <div className="App">
           <BrowserRouter>
-            <Header nombre="Nico " apellido="Peralta Saggiorato" />    
+            <Header nombre="Music " apellido="Store" />    
             <Routes>
                 <Route exact path='/' element={<ItemListContainer />}/>
                 <Route exact path='/category/:id' element={<ItemListContainer />}/>

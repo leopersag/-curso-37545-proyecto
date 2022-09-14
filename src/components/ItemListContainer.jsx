@@ -13,7 +13,7 @@ const ItemListContainer = (props) => {
     useEffect(()=>{
         
         let categoria = "";
-        id === "guitarras"? categoria ="Guitarras": id === "bajos"? categoria = "Bajos":categoria="Todos";
+        id === "guitarras"? categoria ="Guitarras": id === "bajos"? categoria = "Bajos":categoria="Todos los productos";
 
         const getProductos = new Promise ((resolve) => {
             setTimeout(()=>{
@@ -22,7 +22,7 @@ const ItemListContainer = (props) => {
         });
 
         getProductos.then((answer) => {
-            if (categoria==="Todos"){
+            if (categoria==="Todos los productos"){
                 SetItems(answer);
             } else {
                 const categoriaId = answer.filter(cat => cat.categoria ===categoria);  
@@ -39,7 +39,7 @@ const ItemListContainer = (props) => {
                 <strong>{categoria}</strong>
             </ul>
 
-            <div className="d-flex flex-wrap justify-content-center">
+            <div className="d-flex flex-wrap justify-content-center App-body">
                 <ItemList items = {items} />
             </div>
 
