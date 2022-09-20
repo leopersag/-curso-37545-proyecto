@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import Swal from "sweetalert2/dist/sweetalert2.js";
+//import { CartContext } from "./Context/Context";
 
 const ItemCount = (props) => {
-    const [count, setCount] = useState(1)
+    //const {addItem} = useContext(CartContext);
+    const [count, setCount] = useState(1);
     
     return(
         <div className="container">
@@ -15,7 +18,14 @@ const ItemCount = (props) => {
                 }}>+</button>
             </div>
             <div className="row p-2 justify-content-center">
-                <button className="btn btn-dark col-auto">Agregar al carrito</button>
+                <button className="btn btn-dark col-auto" onClick={() =>{
+                    props.stock===0? Swal.fire({
+                        icon: 'error',
+                        title: 'Disculpas',
+                        text: 'Por el momento no contamos con stock de este producto', 
+                      })
+                    : props.onAdd (count);
+                }}>Agregar al carrito</button>
             </div>
         </div>
     )

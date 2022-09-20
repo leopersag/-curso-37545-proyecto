@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useContext }  from "react";
+import { CartContext } from "./Context/Context";
 
 const CartWidget = () => {
 
+    const {cartTotal} = useContext(CartContext);
     return(
-        <img style={{width: 24}} src="../media/cart.png" alt="Cart"/>
+            <button type="button" className="btn position-relative">
+                <img style={{width: 24}} src="../media/cart.png" alt="Cart"/>
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{cartTotal()}</span>
+            </button>
     )
 }
 
