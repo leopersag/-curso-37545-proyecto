@@ -14,10 +14,11 @@ const Provider = ({children}) => {
             setCart([...cart, {...item, cantidad: cantidad}]);
         }
     }
-    console.log(cart);
 
-    const clear = () => {
-        setCart([]);
+    const delItem = (item) => {
+        let producto = cart.find(e => e.id === item.id);
+        cart.splice(cart.indexOf(producto),1);
+        setCart ([...cart]);
     }
 
     const isInCart = (id) => {
@@ -28,8 +29,12 @@ const Provider = ({children}) => {
         return cart.reduce((total,item) => total+item.cantidad,0);
     }
 
+    const cartPrecioTotal = () =>{
+        return cart.reduce((total,item) => total+(item.cantidad*item.precio),0);
+    }
+
     return(
-        <CartContext.Provider value={{cart, addItem,clear,isInCart,cartTotal}}>
+        <CartContext.Provider value={{cart, addItem, delItem, isInCart, cartTotal, cartPrecioTotal}}>
             {children}
         </CartContext.Provider>
     )

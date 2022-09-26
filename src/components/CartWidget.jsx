@@ -7,7 +7,7 @@ const CartWidget = () => {
     return(
             <button type="button" className="btn position-relative">
                 <img style={{width: 24}} src="../media/cart.png" alt="Cart"/>
-                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{cartTotal()}</span>
+                {cartTotal()===0? null: <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{cartTotal()}</span>}
             </button>
     )
 }

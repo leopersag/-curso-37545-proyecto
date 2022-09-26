@@ -18,9 +18,9 @@ const Header = ({nombre, apellido}) =>{
                     
                     <div className="collapse navbar-collapse text-center text-md-start" id="navbarNav">
                         <ul className="navbar-nav me-auto me-lg-0 align-items-center">
-                            <li className="nav-item"><Link className="nav-link" to={"/"}>Inicio</Link></li>
                             <li className="nav-item"><Link className="nav-link" to={"/category/guitarras"}>Guitarras</Link></li>
                             <li className="nav-item"><Link className="nav-link" to={"/category/bajos"}>Bajos</Link></li>
+                            <li className="nav-item"><Link className="nav-link" to={"/category/pianos"}>Pianos</Link></li>
                             <li className="nav-item"><Link className="nav-link" to={"/cart"}><CartWidget /></Link></li>
                         </ul>
                     </div>
