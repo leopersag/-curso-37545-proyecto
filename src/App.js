@@ -1,12 +1,14 @@
 import './Estilos.css';
 import 'core-js/actual';
-import Header from './components/Header';
+import Header from './components/Navbar/Header';
 import Footer from './components/Footer';
-import ItemListContainer from './components/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetailContainer';
+import ItemListContainer from './components/ItemList/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Provider from './components/Context/Context';
 import Cart from './components/Cart/Cart';
+import Checkout from './components/Checkout/Checkout';
+import Order from './components/Checkout/Order';
 
 function App() {
 
@@ -20,6 +22,8 @@ function App() {
                   <Route exact path='/category/:id' element={<ItemListContainer />}/>
                   <Route exact path='/item/:id' element={<ItemDetailContainer />}/>
                   <Route exact path='/cart' element={<Cart />}/>
+                  <Route exact path='/checkout' element={<Checkout />}/>
+                  <Route exact path='/order' element={<Order />}/>
               </Routes>
               <Footer ubicacion="Ushuaia" provincia="TDF"/>
             </BrowserRouter>

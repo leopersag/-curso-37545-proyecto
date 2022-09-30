@@ -1,10 +1,7 @@
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect , useState } from "react";
 import ItemList from "./ItemList";
-//import {productos} from "./productos";
 import {useParams} from "react-router-dom";
-
 import { collection, getDocs, getFirestore, query, where} from "firebase/firestore";
 
 const ItemListContainer = (props) => {
@@ -14,7 +11,13 @@ const ItemListContainer = (props) => {
     
     useEffect(()=>{
         
-        id === "guitarras"? SetCategoria("Guitarras"): id === "bajos"? SetCategoria("Bajos"):id === "pianos"? SetCategoria("Pianos"):SetCategoria("Todos los productos");
+        id === "guitarras"
+        ? SetCategoria("Guitarras")
+        : id === "bajos"
+            ? SetCategoria("Bajos")
+            :id === "pianos"
+                ? SetCategoria("Pianos")
+                :SetCategoria("Todos los productos");
 
 /*         const getProductos = new Promise ((resolve) => {
             setTimeout(()=>{
@@ -34,7 +37,13 @@ const ItemListContainer = (props) => {
 
         const db = getFirestore();
         const itemCollection = collection(db, "Productos");
-        const queryItems = id? (categoria==="Todos los productos"? itemCollection:query(itemCollection,where("categoria", "==",categoria))):itemCollection;
+        
+        const queryItems = id
+        ? (categoria==="Todos los productos"
+            ? itemCollection
+            :query(itemCollection,where("categoria", "==",categoria)))
+        :itemCollection;
+
         getDocs(queryItems).then((snapShot) =>{
             SetItems(snapShot.docs.map(item=>({id:item.id,...item.data()})))
         });

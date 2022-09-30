@@ -1,7 +1,7 @@
 import  React, { useContext, useState } from "react";
-import { CartContext } from "./Context/Context";
+import { CartContext } from "../Context/Context";
 import ItemCount from "./ItemCount";
-import { Link } from "react-router-dom";
+import AddCarrito from "./AddCarrito";
 
 const ItemDetail = (props) => {
     const {addItem} = useContext(CartContext);
@@ -26,7 +26,9 @@ const ItemDetail = (props) => {
                         <p><b>Stock:</b> {props.item.stock}</p>
                     </div>
                     <div className="card-footer text-muted text-center">
-                        {counter ===0 ? <ItemCount item={props} stock={props.item.stock} onAdd={onAdd}/> : <Link to={"/cart"} className="btn btn-dark">Ir al Carrito</Link>}
+                        {counter === 0 
+                            ? <ItemCount item={props} stock={props.item.stock} onAdd={onAdd}/> 
+                            : <AddCarrito />}
                     </div>
                 </div>
             </div>

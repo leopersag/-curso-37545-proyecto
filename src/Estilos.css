@@ -39,3 +39,9 @@
     transform: rotate(360deg);
   }
 }
+
+.bgChange {
+  background-color: #000000 ;
+  background-repeat: repeat;
+  background-size: cover;
+}
