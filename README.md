@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# E-commerce de una tienda de instrumentos con React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Para revisar la app por favor revisar el siguiente [Link](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 

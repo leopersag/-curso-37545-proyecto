@@ -45,3 +45,15 @@
   background-repeat: repeat;
   background-size: cover;
 }
+
+.pagError { 
+  animation-duration: 0.9s;
+  animation-name: aparecer;
+  animation-iteration-count: 1;
+}
+
+@keyframes aparecer {
+  0%{opacity: 0;}
+  99%{opacity: 0;}
+  100%{opacity:1;}
+}

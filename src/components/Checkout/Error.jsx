@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 const Error = () => {
 
     return(
-        <div className="container-fluid text-center">
+        <div className="pagError container-fluid text-center">
             <div className="row align-items-center justify-content-evenly">
                 <div className="col-1"></div>
                 <div className="col-12 col-md-4">

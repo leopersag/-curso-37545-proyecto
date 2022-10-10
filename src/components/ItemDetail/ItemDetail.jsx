@@ -27,8 +27,8 @@ const ItemDetail = (props) => {
                     </div>
                     <div className="card-footer text-muted text-center">
                         {counter === 0 
-                            ? <ItemCount item={props} stock={props.item.stock} onAdd={onAdd}/> 
-                            : <AddCarrito />}
+                        ? <ItemCount item={props} stock={props.item.stock} onAdd={onAdd}/> 
+                        : <AddCarrito />}
                     </div>
                 </div>
             </div>
